@@ -35,6 +35,7 @@
       <nav aria-label="Primary">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
@@ -108,8 +109,8 @@
             recovery for RDS/Aurora, DocumentDB and OpenSearch.
           </p>
           <p>
-            I care about <strong>security</strong> as a first-class concern in
-            everything I ship.
+            I care about <strong>security-first engineering</strong> — cross-account KMS,
+            AMI hardening — as a first-class concern in everything I ship.
           </p>
         </div>
         <ul class="stat-grid" aria-label="Highlights">
@@ -155,7 +156,7 @@
             polls the table to execute them sequentially, reporting status back.
           </li>
           <li>
-            Led the end-to-end migration of a legacy service to
+            Led the end-to-end migration of services to
             <strong>Amazon EKS</strong> — managed cluster setup, node groups, AWS Load
             Balancer Controllers, EFS CSI drivers, IRSA, and authored Kubernetes
             manifests (ConfigMaps, External Secrets, Deployments) for rollout across
@@ -169,7 +170,13 @@
           <li>
             <strong>Designed cross-region, cross-account Backup &amp; DR</strong> for
             RDS/Aurora, DocumentDB, and OpenSearch using EventBridge + Lambda with
-            automated health checks.
+            KMS encryption and automated health checks.
+          </li>
+          <li>
+            <strong>Led an end-to-end disaster recovery drill</strong> by provisioning
+            the entire platform from scratch in a new AWS account outside the parent
+            organization, validating restore paths across data stores, infrastructure,
+            and application services.
           </li>
           <li>
             Built an <strong>automated post-deployment observability system</strong> in
@@ -180,10 +187,52 @@
       </article>
     </section>
 
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="section-head">
+        <span class="section-num">03</span>
+        <h2>Projects</h2>
+      </div>
+
+      <article class="job-card">
+        <header class="job-head">
+          <div>
+            <h3>AWS Network Firewall — Egress Filtering (IaC)</h3>
+          </div>
+          <a class="project-link" href="https://github.com/Vaibhav-Rawat03/network-firewall" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.98 5.24.98 11.52c0 4.86 3.15 8.98 7.52 10.44.55.1.75-.24.75-.53 0-.26-.01-.95-.02-1.87-3.06.66-3.71-1.47-3.71-1.47-.5-1.27-1.22-1.61-1.22-1.61-1-.68.08-.67.08-.67 1.1.08 1.68 1.13 1.68 1.13.98 1.68 2.57 1.2 3.2.92.1-.71.38-1.2.7-1.47-2.44-.28-5.01-1.22-5.01-5.42 0-1.2.43-2.18 1.13-2.95-.11-.28-.49-1.4.1-2.92 0 0 .92-.29 3.02 1.13a10.5 10.5 0 0 1 5.5 0c2.1-1.42 3.02-1.13 3.02-1.13.59 1.52.22 2.64.11 2.92.7.77 1.13 1.75 1.13 2.95 0 4.21-2.57 5.14-5.02 5.41.39.34.74 1 .74 2.02 0 1.46-.01 2.63-.01 2.99 0 .29.2.64.76.53 4.36-1.47 7.51-5.58 7.51-10.44C23.02 5.24 18.27.5 12 .5z"/></svg>
+            GitHub
+          </a>
+        </header>
+        <p class="project-desc">
+          Terraform-driven, multi-AZ AWS Network Firewall with domain-based egress
+          allowlisting and CloudWatch observability.
+        </p>
+        <ul class="job-points">
+          <li>
+            <strong>Provisioned multi-AZ AWS Network Firewall</strong> with dedicated
+            firewall subnets per AZ, separate public/private tiers, and NAT-based
+            egress routing.
+          </li>
+          <li>
+            <strong>Engineered a domain-based egress allowlist</strong> using HTTP_HOST
+            and TLS_SNI rule groups, plus stateful rules for DNS, SSH, ICMP, and
+            established TCP flows.
+          </li>
+          <li>
+            <strong>Phased rollout</strong> via a configurable
+            <code>enable_strict_mode</code> Terraform variable (monitor → strict drop);
+            full observability through CloudWatch logs and GitHub Actions CI running
+            fmt/init/validate on every PR.
+          </li>
+        </ul>
+      </article>
+    </section>
+
     <!-- SKILLS -->
     <section id="skills" class="section">
       <div class="section-head">
-        <span class="section-num">03</span>
+        <span class="section-num">04</span>
         <h2>Technical Skills</h2>
       </div>
 
@@ -219,7 +268,7 @@
     <!-- EDUCATION -->
     <section id="education" class="section">
       <div class="section-head">
-        <span class="section-num">04</span>
+        <span class="section-num">05</span>
         <h2>Education</h2>
       </div>
       <div class="edu-card">
@@ -235,7 +284,7 @@
     <!-- CONTACT -->
     <section id="contact" class="section contact">
       <div class="contact-inner">
-        <span class="section-num">05</span>
+        <span class="section-num">06</span>
         <h2>Let's talk</h2>
         <p>
           Interested in DevOps / SRE work, platform engineering, or cloud
